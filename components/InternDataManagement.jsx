@@ -52,7 +52,7 @@ export default function InternDataManagement({
     useEffect(() => {
         const fetchAllPembimbings = async () => {
             try {
-                const res = await fetch('http://localhost:3000/api/mentor', {
+                const res = await fetch('https://magnet-bps.vercel.app/api/mentor', {
                     cache: 'no-store',
                 });
                 if (!res.ok) throw new Error("Gagal mengambil daftar pembimbing");
@@ -73,7 +73,7 @@ export default function InternDataManagement({
     useEffect(() => {
         const fetchInterns = async () => {
             try {
-                const res = await fetch(`http://localhost:3000/api/intern/${id}`, {
+                const res = await fetch(`https://magnet-bps.vercel.app/api/intern/${id}`, {
                     cache: 'no-store',
                 });
 
@@ -117,7 +117,7 @@ export default function InternDataManagement({
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/intern/${id}`, {
+            const response = await fetch(`https://magnet-bps.vercel.app/api/intern/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
