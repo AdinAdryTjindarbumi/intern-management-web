@@ -1,12 +1,12 @@
-import DivisionPageClient from '@/components/DivisionPageClient';
-import ProtectedRoute from '@/components/ProtectedRoutes';
+import DivisionPageClient from "@/components/DivisionPageClient";
+import ProtectedRoute from "@/components/ProtectedRoutes";
 
 async function getInterns() {
   try {
-    const res = await fetch('http://localhost:3000/api/intern', {
-      cache: 'no-store',
+    const res = await fetch("https://magnet-bps.vercel.app/api/intern", {
+      cache: "no-store",
     });
-    if (!res.ok) throw new Error('Gagal mengambil data intern');
+    if (!res.ok) throw new Error("Gagal mengambil data intern");
     return res.json();
   } catch (error) {
     console.error(error);
@@ -21,5 +21,5 @@ export default async function DivisiPage() {
     <ProtectedRoute>
       <DivisionPageClient interns={interns} />;
     </ProtectedRoute>
-  )
+  );
 }
